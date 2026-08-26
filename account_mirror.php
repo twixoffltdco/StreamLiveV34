@@ -137,7 +137,7 @@ require_once __DIR__ . '/includes/header.php';
     </div>
   </form>
   <p style="font-size:12px;color:var(--text-dim,#888);margin-top:16px">
-    Cron на <b>основном</b> сайте: <code>php cron/mirror_sync.php</code> раз в сутки. Проверяет MySQL зеркала и FTP (файл <code>streamlive_mirror_ok.txt</code>). FTP задаётся в <a href="/account_external_ids.php">FTP для зеркала</a> (правка раз в 30 дней).
+    Cron на <b>основном</b> сайте раз в сутки: <code>php cron/mirror_sync.php</code> — заливает <b>весь скрипт</b> по FTP и обновляет <b>таблицы БД</b> на зеркале (videos, channels, articles…). FTP: <a href="/account_external_ids.php">настройка</a> (раз в 30 дней). На зеркале должен быть свой <code>config</code> с доступом к своей БД; код перезаписывается, данные контента — с основного сайта.
   </p>
 </div>
 <?php require_once __DIR__ . '/includes/footer.php'; ?>
